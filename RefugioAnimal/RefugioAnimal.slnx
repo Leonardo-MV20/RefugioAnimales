@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="../RefugioAnimal.Infrastructure/RefugioAnimal.Infrastructure.csproj" />
+  <Project Path="../RefugioAnimales.Application/RefugioAnimal.Application.csproj" />
+  <Project Path="../RefugioAnimales.Domain/RefugioAnimal.Domain.csproj" />
+  <Project Path="RefugioAnimal.Web.csproj" />
+</Solution>
