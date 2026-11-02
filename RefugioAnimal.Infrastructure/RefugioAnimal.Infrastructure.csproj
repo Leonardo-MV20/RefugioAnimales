@@ -66,8 +66,8 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Data\RefugioContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Persitence\HistorialCuidados\HistorialCuidadoRepository.cs" />
-    <Compile Include="Persitence\Mascotas\MascotaRepository.cs" />
+    <Compile Include="Persistence\HistorialCuidados\HistorialCuidadoRepository.cs" />
+    <Compile Include="Persistence\Mascotas\MascotaRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RefugioAnimales.Application\RefugioAnimal.Application.csproj">
