@@ -55,7 +55,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Migrations\202611012203206_CrearBaseInicial.cs" />
+    <Compile Include="Migrations\202611012203206_CrearBaseInicial.Designer.cs">
+      <DependentUpon>202611012203206_CrearBaseInicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202611012209119_CorregirNombreHistorial.cs" />
+    <Compile Include="Migrations\202611012209119_CorregirNombreHistorial.Designer.cs">
+      <DependentUpon>202611012209119_CorregirNombreHistorial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Data\RefugioContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Persitence\HistorialCuidados\HistorialCuidadoRepository.cs" />
+    <Compile Include="Persitence\Mascotas\MascotaRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RefugioAnimales.Application\RefugioAnimal.Application.csproj">
@@ -68,13 +80,19 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Migrations\" />
-    <Folder Include="Persitence\" />
     <Folder Include="Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202611012203206_CrearBaseInicial.resx">
+      <DependentUpon>202611012203206_CrearBaseInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202611012209119_CorregirNombreHistorial.resx">
+      <DependentUpon>202611012209119_CorregirNombreHistorial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -1,0 +1,22 @@
+﻿using AutoMapper;
+using RefugioAnimal.Application.Mappings;
+
+namespace RefugioAnimal.Web.App_Start
+{
+    public static class AutoMapperConfig
+    {
+        public static IMapper Mapper { get; private set; }
+
+        public static void Register()
+        {
+            var configuration = new MapperConfiguration(cfg =>
+            {
+                cfg.AddProfile<ApplicationMappingProfile>();
+            });
+
+            configuration.AssertConfigurationIsValid();
+
+            Mapper = configuration.CreateMapper();
+        }
+    }
+}

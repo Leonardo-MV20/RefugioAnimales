@@ -1,6 +1,6 @@
 <Solution>
-  <Project Path="../RefugioAnimal.Infrastructure/RefugioAnimal.Infrastructure.csproj" />
-  <Project Path="../RefugioAnimales.Application/RefugioAnimal.Application.csproj" />
-  <Project Path="../RefugioAnimales.Domain/RefugioAnimal.Domain.csproj" />
-  <Project Path="RefugioAnimal.Web.csproj" />
+  <Project Path="../RefugioAnimal.Infrastructure/RefugioAnimal.Infrastructure.csproj" Id="331989ee-d3f4-44e3-b458-e7999430019d" />
+  <Project Path="../RefugioAnimales.Application/RefugioAnimal.Application.csproj" Id="c44965d4-5eec-4f86-bde7-23123d3f76a7" />
+  <Project Path="../RefugioAnimales.Domain/RefugioAnimal.Domain.csproj" Id="f729ef82-68c1-4baf-b3de-b382d63837bd" />
+  <Project Path="RefugioAnimal.Web.csproj" Id="8ce2def1-8959-41c1-96da-9bdb72b5a8f3" />
 </Solution>

@@ -47,6 +47,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\Contratos\IHistorialCuidadoRepository.cs" />
+    <Compile Include="Features\Contratos\IHistorialCuidadoService.cs" />
+    <Compile Include="Features\Contratos\IMascotaRepository.cs" />
+    <Compile Include="Features\Contratos\IMascotaService.cs" />
+    <Compile Include="Features\HistorialCuidado\HistorialCuidadoDto.cs" />
+    <Compile Include="Features\HistorialCuidado\HistorialCuidadoRequest.cs" />
+    <Compile Include="Features\HistorialCuidado\HistorialCuidadoRequestValidator.cs" />
+    <Compile Include="Features\HistorialCuidado\HistorialCuidadoService.cs" />
+    <Compile Include="Features\Mascota\MascotaDto.cs" />
+    <Compile Include="Features\Mascota\MascotaRequest.cs" />
+    <Compile Include="Features\Mascota\MascotaRequestValidator.cs" />
+    <Compile Include="Features\Mascota\MascotaService.cs" />
+    <Compile Include="Mappings\ApplicationMappingProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -55,12 +68,7 @@
       <Name>RefugioAnimal.Domain</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Features\Contratos\" />
-    <Folder Include="Features\HitsorialCuidado\" />
-    <Folder Include="Features\Mascota\" />
-    <Folder Include="Mappings\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

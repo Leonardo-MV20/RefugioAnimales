@@ -1,3 +1,4 @@
+using RefugioAnimal.Web.App_Start;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,8 @@ namespace RefugioAnimal
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+            AutoMapperConfig.Register();
+            ContainerConfig.Register();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
