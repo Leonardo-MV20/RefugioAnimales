@@ -1,0 +1,39 @@
+﻿@model RefugioAnimal.Web.ViewModels.Mascota.EditarMascotaFormModel
+
+@{
+    ViewBag.Title = "Editar mascota";
+}
+
+<div class="page-header">
+    <h1 class="h2">Editar mascota</h1>
+</div>
+
+<div class="card">
+    <div class="card-body p-4">
+
+        @using (Html.BeginForm("Editar", "Mascotas", new { id = Model.Id }, FormMethod.Post, null))
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.Id)
+
+            @Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
+
+            @Html.Partial("_CamposMascota", Model)
+
+            <div class="d-flex flex-wrap gap-2">
+                <button type="submit" class="btn btn-primary">Guardar cambios</button>
+
+                @Html.ActionLink(
+                    "Cancelar",
+                    "Detalle",
+                    new { id = Model.Id },
+                    new { @class = "btn btn-secondary" })
+            </div>
+        }
+
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

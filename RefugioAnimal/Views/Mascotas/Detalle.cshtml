@@ -1,0 +1,105 @@
+﻿
+@model RefugioAnimal.Web.ViewModels.Mascota.MascotaViewModel
+
+@{
+    ViewBag.Title = "Detalle de mascota";
+}
+
+<div class="page-header">
+    <h1 class="h2">Detalle de mascota</h1>
+</div>
+
+<div class="card">
+    <div class="card-body p-4">
+
+        <dl class="row">
+
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(m => m.Nombre)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(m => m.Nombre)
+            </dd>
+
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(m => m.Especie)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(m => m.Especie)
+            </dd>
+
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(m => m.Raza)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(m => m.Raza)
+            </dd>
+
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(m => m.EdadAproximada)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(m => m.EdadAproximada)
+            </dd>
+
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(m => m.Sexo)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(m => m.Sexo)
+            </dd>
+
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(m => m.Estado)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(m => m.Estado)
+            </dd>
+
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(m => m.FechaIngreso)
+            </dt>
+            <dd class="col-sm-9">
+                @Model.FechaIngreso.ToString("dd/MM/yyyy")
+            </dd>
+
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(m => m.Descripcion)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(m => m.Descripcion)
+            </dd>
+
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(m => m.EstaActivo)
+            </dt>
+            <dd class="col-sm-9">
+                @(Model.EstaActivo ? "Sí" : "No")
+            </dd>
+
+        </dl>
+
+        <div class="d-flex flex-wrap gap-2">
+
+            @Html.ActionLink(
+                "Editar",
+                "Editar",
+                new { id = Model.Id },
+                new { @class = "btn btn-primary" })
+
+            @Html.ActionLink(
+                "Eliminar",
+                "Eliminar",
+                new { id = Model.Id },
+                new { @class = "btn btn-danger" })
+
+            @Html.ActionLink(
+                "Volver",
+                "Index",
+                null,
+                new { @class = "btn btn-secondary" })
+
+        </div>
+
+    </div>
+</div>

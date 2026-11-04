@@ -17,6 +17,6 @@ namespace RefugioAnimal.Application.Features.Mascota.Contratos
 
         Task<ValidationResult> Update(MascotaRequest request);
 
-        Task<bool> Delete(Guid id);
+        Task<ValidationResult> Delete(Guid id);
     }
 }
