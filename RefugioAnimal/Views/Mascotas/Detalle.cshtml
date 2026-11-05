@@ -94,6 +94,13 @@
                 new { @class = "btn btn-danger" })
 
             @Html.ActionLink(
+        "Ver Historial de Cuidado",
+        "Index",
+        "HistorialCuidado",
+        new { mascotaId = Model.Id },
+        new { @class = "btn btn-info text-white" })
+
+            @Html.ActionLink(
                 "Volver",
                 "Index",
                 null,

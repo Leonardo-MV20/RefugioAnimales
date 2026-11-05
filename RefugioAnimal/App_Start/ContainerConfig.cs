@@ -49,7 +49,7 @@ namespace RefugioAnimal.Web.App_Start
                 .InstancePerRequest();
 
             builder.RegisterType<HistorialCuidadoRequestValidator>()
-                .As<IValidator<HistorialCuidadoRequest>>()
+                
                 .InstancePerRequest();
 
             var container = builder.Build();

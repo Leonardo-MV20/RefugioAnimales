@@ -1,0 +1,68 @@
+﻿@model RefugioAnimal.Web.ViewModels.HistorialCuidado.CrearHistorialCuidadoFormModel
+
+@{
+    ViewBag.Title = "Registrar Cuidado";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h4>Registrar Nuevo Historial de Cuidado</h4>
+                </div>
+                <div class="card-body">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.HiddenFor(model => model.MascotaId)
+
+                        <div class="text-danger mb-3">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="mb-3">
+                            @Html.LabelFor(model => model.Fecha, htmlAttributes: new { @class = "form-label fw-bold" })
+                            @Html.TextBoxFor(model => model.Fecha, "{0:yyyy-MM-ddTHH:mm}", new { @class = "form-control", type = "datetime-local" })
+                            @Html.ValidationMessageFor(model => model.Fecha, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="mb-3">
+                            @Html.LabelFor(model => model.Tipo, htmlAttributes: new { @class = "form-label fw-bold" })
+                            @Html.TextBoxFor(model => model.Tipo, new { @class = "form-control", placeholder = "Ej. Vacuna, Baño, Desparasitación..." })
+                            @Html.ValidationMessageFor(model => model.Tipo, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="mb-3">
+                            @Html.LabelFor(model => model.Descripcion, htmlAttributes: new { @class = "form-label fw-bold" })
+                            @Html.TextAreaFor(model => model.Descripcion, 4, 40, new { @class = "form-control", placeholder = "Detalles del cuidado realizado..." })
+                            @Html.ValidationMessageFor(model => model.Descripcion, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="mb-3">
+                            @Html.LabelFor(model => model.Responsable, htmlAttributes: new { @class = "form-label fw-bold" })
+                            @Html.TextBoxFor(model => model.Responsable, new { @class = "form-control", placeholder = "Nombre del veterinario o cuidador" })
+                            @Html.ValidationMessageFor(model => model.Responsable, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="mb-3">
+                            @Html.LabelFor(model => model.ProximaRevision, htmlAttributes: new { @class = "form-label fw-bold" })
+                            @Html.TextBoxFor(model => model.ProximaRevision, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+                            @Html.ValidationMessageFor(model => model.ProximaRevision, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="d-flex justify-content-between mt-4">
+                            <button type="submit" class="btn btn-success">Guardar Registro</button>
+                            @Html.ActionLink("Cancelar", "Index", new { mascotaId = Model.MascotaId }, new { @class = "btn btn-secondary" })
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
