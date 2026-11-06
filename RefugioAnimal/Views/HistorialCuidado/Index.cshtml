@@ -1,0 +1,50 @@
+﻿
+@model IEnumerable<RefugioAnimal.Web.ViewModels.HistorialCuidado.HistorialCuidadoViewModel>
+
+@{
+    ViewBag.Title = "Historial de Cuidado";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <h2>Historial de Cuidado de la Mascota</h2>
+    <hr />
+
+    <p>
+        @Html.ActionLink("Registrar Nuevo Cuidado", "Crear", new { mascotaId = ViewBag.MascotaId }, new { @class = "btn btn-primary" })
+        @Html.ActionLink("Volver a Mascotas", "Index", "Mascotas", null, new { @class = "btn btn-secondary ms-2" })
+    </p>
+
+    <table class="table table-striped table-hover mt-3">
+        <thead class="table-dark">
+            <tr>
+                <th>Fecha</th>
+                <th>Tipo</th>
+                <th>Descripción</th>
+                <th>Responsable</th>
+                <th>Próxima Revisión</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Fecha.ToString("dd/MM/yyyy HH:mm")</td>
+                        <td>@item.Tipo</td>
+                        <td>@item.Descripcion</td>
+                        <td>@item.Responsable</td>
+                        <td>@(item.ProximaRevision.HasValue ? item.ProximaRevision.Value.ToString("dd/MM/yyyy") : "N/A")</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="5" class="text-center text-muted">No hay registros en el historial de cuidado para esta mascota.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -176,6 +176,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\HistorialCuidadoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MascotasController.cs" />
     <Compile Include="Global.asax.cs">
@@ -183,6 +184,10 @@
     </Compile>
     <Compile Include="Mappings\WebMappingProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\HistorialCuidado\CrearHistorialCuidadoFormModel.cs" />
+    <Compile Include="ViewModels\HistorialCuidado\EditarHistorialCuidadoFormModel.cs" />
+    <Compile Include="ViewModels\HistorialCuidado\HistorialCuidadoFormModelBase.cs" />
+    <Compile Include="ViewModels\HistorialCuidado\HistorialCuidadoViewModel.cs" />
     <Compile Include="ViewModels\Mascota\MascotaFormModelBase.cs" />
     <Compile Include="ViewModels\Mascota\MascotaViewModel.cs" />
   </ItemGroup>
@@ -245,11 +250,12 @@
     <Content Include="Views\Shared\_EstadoVacio.cshtml" />
     <Content Include="Views\Shared\_Alertas.cshtml" />
     <Content Include="Views\Mascotas\_CamposMascota.cshtml" />
+    <Content Include="Views\HistorialCuidado\Index.cshtml" />
+    <Content Include="Views\HistorialCuidado\Crear.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="ViewModels\HistorialCuidado\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
