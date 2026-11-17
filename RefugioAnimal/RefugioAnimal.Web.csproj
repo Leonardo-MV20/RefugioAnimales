@@ -176,14 +176,18 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AdoptantesController.cs" />
     <Compile Include="Controllers\HistorialCuidadoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MascotasController.cs" />
+    <Compile Include="Controllers\SolicitudesAdopcionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Mappings\WebMappingProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\Adoptantes\AdoptanteFormModelBase.cs" />
+    <Compile Include="ViewModels\Adoptantes\AdoptanteViewModel.cs" />
     <Compile Include="ViewModels\HistorialCuidado\CrearHistorialCuidadoFormModel.cs" />
     <Compile Include="ViewModels\HistorialCuidado\EditarHistorialCuidadoFormModel.cs" />
     <Compile Include="ViewModels\HistorialCuidado\HistorialCuidadoFormModelBase.cs" />
@@ -252,10 +256,18 @@
     <Content Include="Views\Mascotas\_CamposMascota.cshtml" />
     <Content Include="Views\HistorialCuidado\Index.cshtml" />
     <Content Include="Views\HistorialCuidado\Crear.cshtml" />
+    <Content Include="Views\Adoptantes\_CamposAdoptante.cshtml" />
+    <Content Include="Views\Adoptantes\Crear.cshtml" />
+    <Content Include="Views\Adoptantes\Editar.cshtml" />
+    <Content Include="Views\Adoptantes\Index.cshtml" />
+    <Content Include="Views\Adoptantes\Detalle.cshtml" />
+    <Content Include="Views\Adoptantes\Eliminar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="ViewModels\SolicitudAdopcion\" />
+    <Folder Include="Views\SolicitudesAdopcion\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

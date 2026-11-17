@@ -43,8 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Entities\Adoptante.cs" />
     <Compile Include="Entities\HistorialCuidado.cs" />
     <Compile Include="Entities\Mascota.cs" />
+    <Compile Include="Entities\SolicitudAdopcion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

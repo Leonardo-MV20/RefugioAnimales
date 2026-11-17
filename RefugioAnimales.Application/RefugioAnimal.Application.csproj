@@ -47,10 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\Adoptante\AdoptanteDto.cs" />
+    <Compile Include="Features\Adoptante\AdoptanteRequest.cs" />
+    <Compile Include="Features\Adoptante\AdoptanteRequestValidator.cs" />
+    <Compile Include="Features\Adoptante\AdoptanteService.cs" />
+    <Compile Include="Features\Contratos\IAdoptanteRepository.cs" />
+    <Compile Include="Features\Contratos\IAdoptanteService.cs" />
     <Compile Include="Features\Contratos\IHistorialCuidadoRepository.cs" />
     <Compile Include="Features\Contratos\IHistorialCuidadoService.cs" />
     <Compile Include="Features\Contratos\IMascotaRepository.cs" />
     <Compile Include="Features\Contratos\IMascotaService.cs" />
+    <Compile Include="Features\Contratos\ISolicitudAdopcionRepository.cs" />
+    <Compile Include="Features\Contratos\ISolicitudAdopcionService.cs" />
     <Compile Include="Features\HistorialCuidado\HistorialCuidadoDto.cs" />
     <Compile Include="Features\HistorialCuidado\HistorialCuidadoRequest.cs" />
     <Compile Include="Features\HistorialCuidado\HistorialCuidadoRequestValidator.cs" />
@@ -59,6 +67,10 @@
     <Compile Include="Features\Mascota\MascotaRequest.cs" />
     <Compile Include="Features\Mascota\MascotaRequestValidator.cs" />
     <Compile Include="Features\Mascota\MascotaService.cs" />
+    <Compile Include="Features\SolicitudAdopcion\SolicitudAdopcionDto.cs" />
+    <Compile Include="Features\SolicitudAdopcion\SolicitudAdopcionRequest.cs" />
+    <Compile Include="Features\SolicitudAdopcion\SolicitudAdopcionRequestValidator.cs" />
+    <Compile Include="Features\SolicitudAdopcion\SolicitudAdopcionService.cs" />
     <Compile Include="Mappings\ApplicationMappingProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

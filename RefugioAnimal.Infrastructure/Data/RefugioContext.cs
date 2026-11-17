@@ -14,15 +14,19 @@ namespace RefugioAnimal.Infrastructure.Data
 
         public DbSet<HistorialCuidado> HistorialCuidados { get; set; }
 
+        public DbSet<Adoptante> Adoptantes { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<HistorialCuidado>()
                 .ToTable("HistorialCuidados");
+
             modelBuilder.Entity<HistorialCuidado>()
                 .HasRequired(h => h.Mascota)
                 .WithMany(m => m.HistorialCuidados)
                 .HasForeignKey(h => h.MascotaId)
                 .WillCascadeOnDelete(false);
+
             base.OnModelCreating(modelBuilder);
         }
     }

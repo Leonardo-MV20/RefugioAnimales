@@ -1,0 +1,66 @@
+﻿
+@model RefugioAnimal.Web.ViewModels.Adoptante.AdoptanteViewModel
+
+@{
+    ViewBag.Title = "Detalle del adoptante";
+}
+
+<h2>Detalle del adoptante</h2>
+
+<dl class="row">
+    <dt class="col-sm-3">
+        Nombre completo
+    </dt>
+    <dd class="col-sm-9">
+        @Model.NombreCompleto
+    </dd>
+
+    <dt class="col-sm-3">
+        Identificación
+    </dt>
+    <dd class="col-sm-9">
+        @Model.Identificacion
+    </dd>
+
+    <dt class="col-sm-3">
+        Teléfono
+    </dt>
+    <dd class="col-sm-9">
+        @Model.Telefono
+    </dd>
+
+    <dt class="col-sm-3">
+        Correo
+    </dt>
+    <dd class="col-sm-9">
+        @Model.Correo
+    </dd>
+
+    <dt class="col-sm-3">
+        Dirección
+    </dt>
+    <dd class="col-sm-9">
+        @Model.Direccion
+    </dd>
+
+    <dt class="col-sm-3">
+        Observaciones
+    </dt>
+    <dd class="col-sm-9">
+        @Model.Observaciones
+    </dd>
+</dl>
+
+<p>
+    @Html.ActionLink(
+        "Editar",
+        "Editar",
+        new { id = Model.Id },
+        new { @class = "btn btn-warning" })
+
+    @Html.ActionLink(
+        "Volver",
+        "Index",
+        null,
+        new { @class = "btn btn-secondary" })
+</p>

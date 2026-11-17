@@ -63,8 +63,14 @@
     <Compile Include="Migrations\202611012209119_CorregirNombreHistorial.Designer.cs">
       <DependentUpon>202611012209119_CorregirNombreHistorial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202611170622278_AgregarAdoptante.cs" />
+    <Compile Include="Migrations\202611170622278_AgregarAdoptante.Designer.cs">
+      <DependentUpon>202611170622278_AgregarAdoptante.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Data\RefugioContext.cs" />
+    <Compile Include="Persistence\Adoptantes\AdoptanteRepository.cs" />
+    <Compile Include="Persistence\SolicitudesAdopcion\SolicitudAdopcionRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Persistence\HistorialCuidados\HistorialCuidadoRepository.cs" />
     <Compile Include="Persistence\Mascotas\MascotaRepository.cs" />
@@ -92,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202611012209119_CorregirNombreHistorial.resx">
       <DependentUpon>202611012209119_CorregirNombreHistorial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202611170622278_AgregarAdoptante.resx">
+      <DependentUpon>202611170622278_AgregarAdoptante.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

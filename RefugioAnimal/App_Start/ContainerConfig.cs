@@ -7,9 +7,12 @@ using RefugioAnimal.Application.Features.Mascota;
 using RefugioAnimal.Application.Features.Mascota.Contratos;
 using RefugioAnimal.Application.Features.HistorialCuidado;
 using RefugioAnimal.Application.Features.HistorialCuidado.Contratos;
+using RefugioAnimal.Application.Features.Adoptante;
+using RefugioAnimal.Application.Features.Adoptante.Contratos;
 using RefugioAnimal.Infrastructure.Data;
 using RefugioAnimal.Infrastructure.Persistence.Mascotas;
 using RefugioAnimal.Infrastructure.Persistence.HistorialCuidados;
+using RefugioAnimal.Infrastructure.Persistence.Adoptantes;
 
 namespace RefugioAnimal.Web.App_Start
 {
@@ -49,7 +52,18 @@ namespace RefugioAnimal.Web.App_Start
                 .InstancePerRequest();
 
             builder.RegisterType<HistorialCuidadoRequestValidator>()
-                
+                .InstancePerRequest();
+
+            builder.RegisterType<AdoptanteRepository>()
+                .As<IAdoptanteRepository>()
+                .InstancePerRequest();
+
+            builder.RegisterType<AdoptanteService>()
+                .As<IAdoptanteService>()
+                .InstancePerRequest();
+
+            builder.RegisterType<AdoptanteRequestValidator>()
+                .As<IValidator<AdoptanteRequest>>()
                 .InstancePerRequest();
 
             var container = builder.Build();

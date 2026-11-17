@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
-using RefugioAnimal.Application.Features.Mascota;
+using RefugioAnimal.Application.Features.Adoptante;
 using RefugioAnimal.Application.Features.HistorialCuidado;
+using RefugioAnimal.Application.Features.Mascota;
 using RefugioAnimal.Domain.Entities;
 
 namespace RefugioAnimal.Application.Mappings
@@ -20,6 +21,11 @@ namespace RefugioAnimal.Application.Mappings
             CreateMap<HistorialCuidadoRequest, HistorialCuidado>()
                 .ForMember(dest => dest.Id, src => src.Ignore())
                 .ForMember(dest => dest.Mascota, src => src.Ignore());
+
+            CreateMap<Adoptante, AdoptanteDto>();
+
+            CreateMap<AdoptanteRequest, Adoptante>()
+                .ForMember(dest => dest.Id, src => src.Ignore());
         }
     }
 }

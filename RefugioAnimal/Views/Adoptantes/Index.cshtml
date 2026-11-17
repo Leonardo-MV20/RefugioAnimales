@@ -1,0 +1,72 @@
+﻿@model IEnumerable<RefugioAnimal.Web.ViewModels.Adoptante.AdoptanteViewModel>
+
+@{
+    ViewBag.Title = "Adoptantes";
+}
+
+<h2>Adoptantes</h2>
+
+<p>
+    @Html.ActionLink(
+            "Registrar adoptante",
+            "Crear",
+            null,
+            new { @class = "btn btn-primary" })
+</p>
+
+@if (!Model.Any())
+{
+    @Html.Partial(
+            "_EstadoVacio",
+            new ViewDataDictionary
+            {
+            { "Titulo", "No hay adoptantes registrados." },
+            { "Mensaje", "Registre un adoptante para comenzar." }
+                        })
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre completo</th>
+                <th>Identificación</th>
+                <th>Teléfono</th>
+                <th>Correo</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var adoptante in Model)
+            {
+                <tr>
+                    <td>@adoptante.NombreCompleto</td>
+                    <td>@adoptante.Identificacion</td>
+                    <td>@adoptante.Telefono</td>
+                    <td>@adoptante.Correo</td>
+
+                    <td>
+                        @Html.ActionLink(
+                            "Ver",
+                            "Detalle",
+                            new { id = adoptante.Id },
+                            new { @class = "btn btn-outline-primary btn-sm" })
+
+                        @Html.ActionLink(
+                            "Editar",
+                            "Editar",
+                            new { id = adoptante.Id },
+                            new { @class = "btn btn-outline-secondary btn-sm" })
+
+                        @Html.ActionLink(
+                            "Eliminar",
+                            "Eliminar",
+                            new { id = adoptante.Id },
+                            new { @class = "btn btn-outline-danger btn-sm" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

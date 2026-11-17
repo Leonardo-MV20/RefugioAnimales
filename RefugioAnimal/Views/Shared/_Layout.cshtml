@@ -63,6 +63,15 @@
                             new { @class = "nav-link" + activo("Mascotas") })
                     </li>
 
+                    <li class="nav-item">
+                        @Html.ActionLink(
+                            "Adoptantes",
+                            "Index",
+                            "Adoptantes",
+                            new { area = "" },
+                            new { @class = "nav-link" + activo("Adoptantes") })
+                    </li>
+
                 </ul>
 
             </div>

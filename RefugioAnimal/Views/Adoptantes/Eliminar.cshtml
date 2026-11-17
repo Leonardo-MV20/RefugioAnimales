@@ -1,0 +1,59 @@
+﻿
+@model RefugioAnimal.Web.ViewModels.Adoptante.AdoptanteViewModel
+
+@{
+    ViewBag.Title = "Eliminar adoptante";
+}
+
+<h2>Eliminar adoptante</h2>
+
+<div class="alert alert-warning">
+    ¿Está seguro de que desea eliminar este adoptante?
+</div>
+
+<dl class="row">
+    <dt class="col-sm-3">
+        Nombre completo
+    </dt>
+    <dd class="col-sm-9">
+        @Model.NombreCompleto
+    </dd>
+
+    <dt class="col-sm-3">
+        Identificación
+    </dt>
+    <dd class="col-sm-9">
+        @Model.Identificacion
+    </dd>
+
+    <dt class="col-sm-3">
+        Teléfono
+    </dt>
+    <dd class="col-sm-9">
+        @Model.Telefono
+    </dd>
+
+    <dt class="col-sm-3">
+        Correo
+    </dt>
+    <dd class="col-sm-9">
+        @Model.Correo
+    </dd>
+</dl>
+
+@using (Html.BeginForm("ConfirmarEliminar", "Adoptantes", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(m => m.Id)
+
+    <button type="submit" class="btn btn-danger">
+        Eliminar
+    </button>
+
+    @Html.ActionLink(
+        "Cancelar",
+        "Index",
+        null,
+        new { @class = "btn btn-secondary" })
+}
