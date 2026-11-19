@@ -16,6 +16,8 @@ namespace RefugioAnimal.Infrastructure.Data
 
         public DbSet<Adoptante> Adoptantes { get; set; }
 
+        public DbSet<SolicitudAdopcion> SolicitudesAdopcion { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<HistorialCuidado>()
@@ -25,6 +27,21 @@ namespace RefugioAnimal.Infrastructure.Data
                 .HasRequired(h => h.Mascota)
                 .WithMany(m => m.HistorialCuidados)
                 .HasForeignKey(h => h.MascotaId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<SolicitudAdopcion>()
+                .ToTable("SolicitudesAdopcion");
+
+            modelBuilder.Entity<SolicitudAdopcion>()
+                .HasRequired(s => s.Adoptante)
+                .WithMany(a => a.SolicitudesAdopcion)
+                .HasForeignKey(s => s.AdoptanteId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<SolicitudAdopcion>()
+                .HasRequired(s => s.Mascota)
+                .WithMany(m => m.SolicitudesAdopcion)
+                .HasForeignKey(s => s.MascotaId)
                 .WillCascadeOnDelete(false);
 
             base.OnModelCreating(modelBuilder);

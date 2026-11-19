@@ -67,6 +67,10 @@
     <Compile Include="Migrations\202611170622278_AgregarAdoptante.Designer.cs">
       <DependentUpon>202611170622278_AgregarAdoptante.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202611180112100_AgregarSolicitudAdopcion.cs" />
+    <Compile Include="Migrations\202611180112100_AgregarSolicitudAdopcion.Designer.cs">
+      <DependentUpon>202611180112100_AgregarSolicitudAdopcion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Data\RefugioContext.cs" />
     <Compile Include="Persistence\Adoptantes\AdoptanteRepository.cs" />
@@ -101,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202611170622278_AgregarAdoptante.resx">
       <DependentUpon>202611170622278_AgregarAdoptante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202611180112100_AgregarSolicitudAdopcion.resx">
+      <DependentUpon>202611180112100_AgregarSolicitudAdopcion.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

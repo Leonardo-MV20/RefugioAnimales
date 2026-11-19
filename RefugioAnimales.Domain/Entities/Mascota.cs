@@ -38,5 +38,6 @@ namespace RefugioAnimal.Domain.Entities
 
         public virtual ICollection<HistorialCuidado> HistorialCuidados { get; set; }
             = new List<HistorialCuidado>();
+        public ICollection<SolicitudAdopcion> SolicitudesAdopcion { get; set; }
     }
 }

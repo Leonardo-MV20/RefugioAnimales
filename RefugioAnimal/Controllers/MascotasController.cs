@@ -63,6 +63,7 @@ namespace RefugioAnimal.Web.Controllers
             return View(model);
         }
 
+        [Authorize(Roles = "Administrador")]
         [HttpGet]
         public ActionResult Crear()
         {
@@ -70,6 +71,7 @@ namespace RefugioAnimal.Web.Controllers
             return View(model);
         }
 
+        [Authorize(Roles = "Administrador")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Crear(CrearMascotaFormModel model)
@@ -105,6 +107,7 @@ namespace RefugioAnimal.Web.Controllers
             }
         }
 
+        [Authorize(Roles = "Administrador")]
         [HttpGet]
         public async Task<ActionResult> Editar(Guid? id)
         {
@@ -123,6 +126,7 @@ namespace RefugioAnimal.Web.Controllers
             return View(model);
         }
 
+        [Authorize(Roles = "Administrador")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Editar(Guid id, EditarMascotaFormModel model)
@@ -163,6 +167,7 @@ namespace RefugioAnimal.Web.Controllers
             }
         }
 
+        [Authorize(Roles = "Administrador")]
         [HttpGet]
         public async Task<ActionResult> Eliminar(Guid? id)
         {
@@ -181,6 +186,7 @@ namespace RefugioAnimal.Web.Controllers
             return View(model);
         }
 
+        [Authorize(Roles = "Administrador")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> ConfirmarEliminar(Guid id)

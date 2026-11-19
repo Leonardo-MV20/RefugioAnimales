@@ -9,10 +9,13 @@ using RefugioAnimal.Application.Features.HistorialCuidado;
 using RefugioAnimal.Application.Features.HistorialCuidado.Contratos;
 using RefugioAnimal.Application.Features.Adoptante;
 using RefugioAnimal.Application.Features.Adoptante.Contratos;
+using RefugioAnimal.Application.Features.SolicitudAdopcion;
+using RefugioAnimal.Application.Features.SolicitudAdopcion.Contratos;
 using RefugioAnimal.Infrastructure.Data;
 using RefugioAnimal.Infrastructure.Persistence.Mascotas;
 using RefugioAnimal.Infrastructure.Persistence.HistorialCuidados;
 using RefugioAnimal.Infrastructure.Persistence.Adoptantes;
+using RefugioAnimal.Infrastructure.Persistence.SolicitudesAdopcion;
 
 namespace RefugioAnimal.Web.App_Start
 {
@@ -64,6 +67,18 @@ namespace RefugioAnimal.Web.App_Start
 
             builder.RegisterType<AdoptanteRequestValidator>()
                 .As<IValidator<AdoptanteRequest>>()
+                .InstancePerRequest();
+
+            builder.RegisterType<SolicitudAdopcionRepository>()
+                .As<ISolicitudAdopcionRepository>()
+                .InstancePerRequest();
+
+            builder.RegisterType<SolicitudAdopcionService>()
+                .As<ISolicitudAdopcionService>()
+                .InstancePerRequest();
+
+            builder.RegisterType<SolicitudAdopcionRequestValidator>()
+                .As<IValidator<SolicitudAdopcionRequest>>()
                 .InstancePerRequest();
 
             var container = builder.Build();

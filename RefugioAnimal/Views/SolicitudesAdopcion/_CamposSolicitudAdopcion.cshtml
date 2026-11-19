@@ -1,0 +1,101 @@
+﻿
+@using System.Collections.Generic
+@using System.Web.Mvc
+@model RefugioAnimal.Web.ViewModels.SolicitudAdopcion.SolicitudAdopcionFormModelBase
+
+<div class="mb-3">
+    @Html.LabelFor(m => m.AdoptanteId, new { @class = "form-label" })
+
+    @Html.DropDownListFor(
+        m => m.AdoptanteId,
+        Model.AdoptanteOptions,
+        "-- Seleccione un adoptante --",
+        new { @class = "form-select" })
+
+    @Html.ValidationMessageFor(
+        m => m.AdoptanteId,
+        "",
+        new { @class = "text-danger" })
+</div>
+
+<div class="mb-3">
+    @Html.LabelFor(m => m.MascotaId, new { @class = "form-label" })
+
+    @Html.DropDownListFor(
+        m => m.MascotaId,
+        Model.MascotaOptions,
+        "-- Seleccione una mascota --",
+        new { @class = "form-select" })
+
+    @Html.ValidationMessageFor(
+        m => m.MascotaId,
+        "",
+        new { @class = "text-danger" })
+</div>
+
+<div class="mb-3">
+    @Html.LabelFor(m => m.FechaSolicitud, new { @class = "form-label" })
+
+    @Html.TextBoxFor(
+        m => m.FechaSolicitud,
+        "{0:yyyy-MM-dd}",
+        new
+        {
+            @class = "form-control",
+            type = "date"
+        })
+
+    @Html.ValidationMessageFor(
+        m => m.FechaSolicitud,
+        "",
+        new { @class = "text-danger" })
+</div>
+
+<div class="mb-3">
+    @Html.LabelFor(m => m.Estado, new { @class = "form-label" })
+
+    @Html.DropDownListFor(
+        m => m.Estado,
+        new List<SelectListItem>
+        {
+            new SelectListItem
+            {
+                Text = "Pendiente",
+                Value = "Pendiente"
+            },
+            new SelectListItem
+            {
+                Text = "Aprobada",
+                Value = "Aprobada"
+            },
+            new SelectListItem
+            {
+                Text = "Rechazada",
+                Value = "Rechazada"
+            }
+        },
+        "-- Seleccione el estado --",
+        new { @class = "form-select" })
+
+    @Html.ValidationMessageFor(
+        m => m.Estado,
+        "",
+        new { @class = "text-danger" })
+</div>
+
+<div class="mb-3">
+    @Html.LabelFor(m => m.Motivo, new { @class = "form-label" })
+
+    @Html.TextAreaFor(
+        m => m.Motivo,
+        new
+        {
+            @class = "form-control",
+            rows = "4"
+        })
+
+    @Html.ValidationMessageFor(
+        m => m.Motivo,
+        "",
+        new { @class = "text-danger" })
+</div>

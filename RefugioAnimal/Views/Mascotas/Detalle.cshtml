@@ -81,24 +81,27 @@
 
         <div class="d-flex flex-wrap gap-2">
 
-            @Html.ActionLink(
-                "Editar",
-                "Editar",
-                new { id = Model.Id },
-                new { @class = "btn btn-primary" })
+            @if (User.IsInRole("Administrador"))
+            {
+                @Html.ActionLink(
+                    "Editar",
+                    "Editar",
+                    new { id = Model.Id },
+                    new { @class = "btn btn-warning" })
 
-            @Html.ActionLink(
-                "Eliminar",
-                "Eliminar",
-                new { id = Model.Id },
-                new { @class = "btn btn-danger" })
+                @Html.ActionLink(
+                    "Eliminar",
+                    "Eliminar",
+                    new { id = Model.Id },
+                    new { @class = "btn btn-danger" })
 
-            @Html.ActionLink(
-        "Ver Historial de Cuidado",
-        "Index",
-        "HistorialCuidado",
-        new { mascotaId = Model.Id },
-        new { @class = "btn btn-info text-white" })
+                @Html.ActionLink(
+                    "Ver Historial de Cuidado",
+                    "Index",
+                    "HistorialCuidado",
+                    new { mascotaId = Model.Id },
+                    new { @class = "btn btn-info" })
+            }
 
             @Html.ActionLink(
                 "Volver",

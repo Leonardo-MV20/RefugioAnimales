@@ -10,6 +10,7 @@ using System.Web.Mvc;
 
 namespace RefugioAnimal.Web.Controllers
 {
+    [Authorize(Roles = "Administrador")]
     public class AdoptantesController : Controller
     {
         private readonly IAdoptanteService _service;

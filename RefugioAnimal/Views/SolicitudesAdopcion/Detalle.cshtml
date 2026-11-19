@@ -1,0 +1,59 @@
+﻿
+@model RefugioAnimal.Web.ViewModels.SolicitudAdopcion.SolicitudAdopcionViewModel
+
+@{
+    ViewBag.Title = "Detalle de la solicitud";
+}
+
+<h2>Detalle de la solicitud</h2>
+
+<dl class="row">
+    <dt class="col-sm-3">
+        Adoptante
+    </dt>
+    <dd class="col-sm-9">
+        @Model.Adoptante
+    </dd>
+
+    <dt class="col-sm-3">
+        Mascota
+    </dt>
+    <dd class="col-sm-9">
+        @Model.Mascota
+    </dd>
+
+    <dt class="col-sm-3">
+        Fecha de solicitud
+    </dt>
+    <dd class="col-sm-9">
+        @Model.FechaSolicitud.ToString("dd/MM/yyyy")
+    </dd>
+
+    <dt class="col-sm-3">
+        Estado
+    </dt>
+    <dd class="col-sm-9">
+        @Model.Estado
+    </dd>
+
+    <dt class="col-sm-3">
+        Motivo
+    </dt>
+    <dd class="col-sm-9">
+        @Model.Motivo
+    </dd>
+</dl>
+
+<p>
+    @Html.ActionLink(
+        "Editar",
+        "Editar",
+        new { id = Model.Id },
+        new { @class = "btn btn-warning" })
+
+    @Html.ActionLink(
+        "Volver",
+        "Index",
+        null,
+        new { @class = "btn btn-secondary" })
+</p>

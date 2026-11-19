@@ -1,0 +1,74 @@
+﻿
+@using System.Linq
+@model IEnumerable<RefugioAnimal.Web.ViewModels.SolicitudAdopcion.SolicitudAdopcionViewModel>
+
+@{
+    ViewBag.Title = "Solicitudes de adopción";
+}
+
+<h2>Solicitudes de adopción</h2>
+
+<p>
+    @Html.ActionLink(
+        "Registrar solicitud",
+        "Crear",
+        null,
+        new { @class = "btn btn-primary" })
+</p>
+
+@if (!Model.Any())
+{
+    @Html.Partial(
+        "_EstadoVacio",
+        new ViewDataDictionary
+        {
+            { "Titulo", "No hay solicitudes registradas." },
+            { "Mensaje", "Registre una solicitud de adopción para comenzar." }
+        })
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Adoptante</th>
+                <th>Mascota</th>
+                <th>Fecha</th>
+                <th>Estado</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var solicitud in Model)
+            {
+                <tr>
+                    <td>@solicitud.Adoptante</td>
+                    <td>@solicitud.Mascota</td>
+                    <td>@solicitud.FechaSolicitud.ToString("dd/MM/yyyy")</td>
+                    <td>@solicitud.Estado</td>
+
+                    <td>
+                        @Html.ActionLink(
+                            "Ver",
+                            "Detalle",
+                            new { id = solicitud.Id },
+                            new { @class = "btn btn-outline-primary btn-sm" })
+
+                        @Html.ActionLink(
+                            "Editar",
+                            "Editar",
+                            new { id = solicitud.Id },
+                            new { @class = "btn btn-outline-secondary btn-sm" })
+
+                        @Html.ActionLink(
+                            "Eliminar",
+                            "Eliminar",
+                            new { id = solicitud.Id },
+                            new { @class = "btn btn-outline-danger btn-sm" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

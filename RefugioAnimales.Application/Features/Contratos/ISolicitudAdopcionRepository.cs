@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace RefugioAnimales.Application.Features.Contratos
+namespace RefugioAnimal.Application.Features.SolicitudAdopcion.Contratos
 {
-    internal class ISolicitudAdopcionRepository
+    public interface ISolicitudAdopcionRepository
     {
+        Task<IEnumerable<SolicitudAdopcionDto>> GetAll();
+        Task<SolicitudAdopcionDto> GetById(Guid id);
+        Task Insert(SolicitudAdopcionRequest solicitud);
+        Task Update(SolicitudAdopcionRequest solicitud);
+        Task Delete(Guid id);
     }
 }

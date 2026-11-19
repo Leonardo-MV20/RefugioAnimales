@@ -1,12 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace RefugioAnimales.Application.Features.SolicitudAdopcion
+namespace RefugioAnimal.Application.Features.SolicitudAdopcion
 {
-    internal class SolicitudAdopcionDto
+    public class SolicitudAdopcionDto
     {
+        public Guid Id { get; set; }
+        public Guid AdoptanteId { get; set; }
+        public Guid MascotaId { get; set; }
+        public DateTime FechaSolicitud { get; set; }
+        public string Estado { get; set; }
+        public string Motivo { get; set; }
+        public string Adoptante { get; set; }
+        public string Mascota { get; set; }
     }
 }

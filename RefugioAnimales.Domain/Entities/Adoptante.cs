@@ -28,5 +28,6 @@ namespace RefugioAnimal.Domain.Entities
 
         [StringLength(500)]
         public string Observaciones { get; set; }
+        public ICollection<SolicitudAdopcion> SolicitudesAdopcion { get; set; }
     }
 }

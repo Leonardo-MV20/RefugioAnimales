@@ -1,0 +1,41 @@
+﻿
+@model RefugioAnimal.Web.ViewModels.SolicitudAdopcion.EditarSolicitudAdopcionFormModel
+
+@{
+    ViewBag.Title = "Editar solicitud de adopción";
+}
+
+<h2>Editar solicitud de adopción</h2>
+
+@using (Html.BeginForm(
+    "Editar",
+    "SolicitudesAdopcion",
+    new { id = Model.Id },
+    FormMethod.Post,
+    null))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(m => m.Id)
+
+    @Html.ValidationSummary(
+        true,
+        "",
+        new { @class = "text-danger" })
+
+    @Html.Partial("_CamposSolicitudAdopcion", Model)
+
+    <button type="submit" class="btn btn-primary">
+        Guardar cambios
+    </button>
+
+    @Html.ActionLink(
+        "Cancelar",
+        "Index",
+        null,
+        new { @class = "btn btn-secondary" })
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

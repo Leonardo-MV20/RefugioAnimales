@@ -1,0 +1,62 @@
+﻿
+@model RefugioAnimal.Web.ViewModels.SolicitudAdopcion.SolicitudAdopcionViewModel
+
+@{
+    ViewBag.Title = "Eliminar solicitud";
+}
+
+<h2>Eliminar solicitud</h2>
+
+<div class="alert alert-warning">
+    ¿Está seguro de que desea eliminar esta solicitud de adopción?
+</div>
+
+<dl class="row">
+    <dt class="col-sm-3">
+        Adoptante
+    </dt>
+    <dd class="col-sm-9">
+        @Model.Adoptante
+    </dd>
+
+    <dt class="col-sm-3">
+        Mascota
+    </dt>
+    <dd class="col-sm-9">
+        @Model.Mascota
+    </dd>
+
+    <dt class="col-sm-3">
+        Fecha de solicitud
+    </dt>
+    <dd class="col-sm-9">
+        @Model.FechaSolicitud.ToString("dd/MM/yyyy")
+    </dd>
+
+    <dt class="col-sm-3">
+        Estado
+    </dt>
+    <dd class="col-sm-9">
+        @Model.Estado
+    </dd>
+</dl>
+
+@using (Html.BeginForm(
+    "ConfirmarEliminar",
+    "SolicitudesAdopcion",
+    FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(m => m.Id)
+
+    <button type="submit" class="btn btn-danger">
+        Eliminar
+    </button>
+
+    @Html.ActionLink(
+        "Cancelar",
+        "Index",
+        null,
+        new { @class = "btn btn-secondary" })
+}

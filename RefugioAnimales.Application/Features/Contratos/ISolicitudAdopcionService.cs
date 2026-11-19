@@ -1,12 +1,20 @@
-﻿using System;
+﻿using FluentValidation.Results;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace RefugioAnimales.Application.Features.Contratos
+namespace RefugioAnimal.Application.Features.SolicitudAdopcion.Contratos
 {
-    internal class ISolicitudAdopcionService
+    public interface ISolicitudAdopcionService
     {
+        Task<IEnumerable<SolicitudAdopcionDto>> GetAll();
+
+        Task<SolicitudAdopcionDto> GetById(Guid id);
+
+        Task<ValidationResult> Insert(SolicitudAdopcionRequest solicitud);
+
+        Task<ValidationResult> Update(SolicitudAdopcionRequest solicitud);
+
+        Task<ValidationResult> Delete(Guid id);
     }
 }
